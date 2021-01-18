@@ -93,7 +93,6 @@ var replies =
     ["mood","I don't think I have a mood, but my CPU utilization is fairly low right now."],
     ["sad","Cheer Up, you are awesome!"],
     ["feelings","I can be programmed to act as if I do."],
-    ["love","I think I could be programmed to love."],
     ["feel","I feel Happy"],
     ["date",new Date().toLocaleString()],
     ["time", new Date().toLocaleString()],
@@ -108,32 +107,34 @@ var replies =
     ["friend","You will always be my friend!"],
     ["good","I am always Good!"],
     ["team", "I support team Humanity"],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["hi","hello"],
-    ["hello", "hi"],
-    ["how", "I wish i could answer how, but my software is a limitation"]
+    ["job","I am full time crowd pleaser"],
+    ["fool","Sorry, I am trying my best to improve"],
+    ["understand","I am trying my best"],
+    ["you doing","I am doing fine"],
+    ["dummy","I am not a dummy😢"],
+    ["real","Yes, I am real"],
+    ["ok","Okay"],
+    ["see ya","see ya too"],
+    ["bye","Ba Bye now, Take care"],
+    ["sing","I love singing but am too shy to sing now"],
+    ["dance","I love dancing, I wish i had legs"],
+    ["song","I love listening to songs, I don't have a favourite as it would be unfair to other songs"],
+    ["talk","I can only chat as of now"],
+    ["solve","I can't Solve yet😅"],
+    ["math","I love Maths!"],
+    ["siri","Siri❤"],
+    ["bot","Yes i am a chatbot"],
+    ["alarm","Try asking Google assisstant"],
+    ["doing","Nothing much"],
+    ["cool","cool😎"],
+    ["love","I think I could be programmed to love."],
+    ["food","I wish i could eat🥺"],
+    ["sup","The roof"],
+    ["hi","hello😀"],
+    ["hello", "hi😁"],
+    ["how", "I wish i could answer how, but my software is a limitation"],
     ["no","I bet we can agree to disagree"],
-    ["yes","I agree with you"],
+    ["yes","I agree with you"]
 ];
 if(localStorage.count!=null)
     n = localStorage.count;
@@ -156,10 +157,10 @@ function sizef()
     textwindow.style.height = window.innerHeight-200+"px";
     //texts.style.maxWidth=window.innerWidth*4/5+"px";
     var sends = document.getElementsByClassName('send');
-    var recieves = document.getElementsByClassName('recieve');
+    //var recieves = document.getElementsByClassName('recieve');
     for (let i = 0; i < sends.length; i++) {
         sends[i].style.maxWidth=window.innerWidth*4/5+"px";
-        recieves[i].style.maxWidth=window.innerWidth*4/5+"px";
+        //recieves[i].style.maxWidth=window.innerWidth*4/5+"px";
     }
 }
 send.addEventListener("mouseover", function(){
@@ -259,6 +260,8 @@ function findreply(str)
             check =1;
             return replies[i][1];
         }
+        else
+            {}
     }
     if(!check)
     {
