@@ -63,11 +63,11 @@ function sendtxt()
     newEle.className = "send";
     newEle.innerHTML = textbox.value;
     texts.appendChild(newEle);
-    textbox.value = "";
     n++;
     localStorage.count = n;
     localStorage.setItem(n.toString(),newEle.innerHTML); 
-    recievebottxt();
+    recievebottxt(textbox.value);
+    textbox.value = "";
     texts.scrollTo({
         top: texts.scrollTop+100000,
         behavior: 'smooth'
@@ -82,10 +82,12 @@ function sendtxt()
     textbox.value = "";
     localStorage.setItem(n.toString()+'r',newEle.innerHTML);
 }*/
-function recievebottxt()
+function recievebottxt(usertext)
 {
     var newEle = document.createElement("div");
-    newEle.innerHTML ='-' + replies[Math.floor((Math.random() * replies.length) + 0)];
+    var reply = findreply(usertext);
+    //reply = '-' + replies[Math.floor((Math.random() * replies.length) + 0)];
+    newEle.innerHTML = reply;
     newEle.className = "recieve";
     texts.appendChild(newEle);
     localStorage.setItem(n.toString()+'r',newEle.innerHTML);
@@ -104,5 +106,12 @@ for(var i=1; i<=n; i++)
         newEle.innerHTML = localStorage.getItem(i+'r');
         texts.appendChild(newEle);
     }
+}
+function findreply(str)
+{
+    if(str.includes("hi"))
+        return "Hello back";
+    else
+        return '-' + replies[Math.floor((Math.random() * replies.length) + 0)];
 }
 sizef();
