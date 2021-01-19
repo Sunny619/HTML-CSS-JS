@@ -30,6 +30,19 @@
             border-radius: 4px;
             margin-top: 8px;
             background-color: rgb(255, 255, 255);
+            animation-name: comein;
+            animation-duration: 0.4s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+        @keyframes comein
+        {
+            from{
+                margin-left: -100%;
+            }
+            to{
+                margin-left: 0%;
+            }
         }
         body
         {

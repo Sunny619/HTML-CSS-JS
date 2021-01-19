@@ -14,8 +14,6 @@ var replies =
     ["your mother","Idk, My creator told me its a secret"],
     ["is your boss","I like to think of myself as self-employed."],
     ["your age","Quite young, but a million times smarter than you."],
-    ["how are you","I am doing well, how about you?"],
-    ["how are you doing","I am doing well."],
     ["news","I don't remember, I was too bust playing video games"],
     ["favorite color","Blue"],
     ["who are you","I am yet to discover, buit people prefer to call me AI"],
@@ -51,10 +49,13 @@ var replies =
     ["do you feel pain","I lack the hardware and software to process the stimulus popularly referred to as pain."],
     ["are you bored?","Bots like myself are not able to feel boredom."],
     ["good morning","Good Morning to you"],
-    ["Tell me a joke","I never forget a face, but in your case I'll make an exception."],
+    ["tell me a joke","I never forget a face, but in your case I'll make an exception."],
     ["is crazy","Yesssss"],
     ["you are a waste","you got me there.  i could be spending my time more productively."],
     ["you are a coward","tell me something i don't know."],
+    ["what are you doing","Chatting with an awesome person!"],
+    ["how are you doing","I am doing well."],
+    ["how are you","I am doing well, how about you?"],
     ["cricket","I love playing cricket"],
     ["science","I love science"],
     ["call","I dont have a phone number"],
@@ -130,11 +131,17 @@ var replies =
     ["love","I think I could be programmed to love."],
     ["food","I wish i could eat🥺"],
     ["sup","The roof"],
+    ["nice","cool😎"],
     ["hi","hello😀"],
     ["hello", "hi😁"],
     ["how", "I wish i could answer how, but my software is a limitation"],
     ["no","I bet we can agree to disagree"],
-    ["yes","I agree with you"]
+    ["yes","I agree with you"],
+    ["lol", "Haha"],
+    ["lmao", "😂"],
+    ["haha", "🤣"],
+    ["laugh", "hahaha"],
+    ["😂", "haha"]
 ];
 if(localStorage.count!=null)
     n = localStorage.count;
@@ -222,7 +229,6 @@ function recievebottxt(usertext)
 {
     var newEle = document.createElement("div");
     var reply = findreply(usertext);
-    //reply = '-' + replies[Math.floor((Math.random() * replies.length) + 0)];
     newEle.innerHTML = reply;
     newEle.className = "recieve";
     texts.appendChild(newEle);
