@@ -163,11 +163,11 @@ function sizef()
 {
     textwindow.style.height = window.innerHeight-200+"px";
     //texts.style.maxWidth=window.innerWidth*4/5+"px";
-    var sends = document.getElementsByClassName('send');
-    //var recieves = document.getElementsByClassName('recieve');
+    let sends = document.querySelectorAll(".send")
+    let recieves = document.querySelectorAll(".recieve")
     for (let i = 0; i < sends.length; i++) {
         sends[i].style.maxWidth=window.innerWidth*4/5+"px";
-        //recieves[i].style.maxWidth=window.innerWidth*4/5+"px";
+        recieves[i].style.maxWidth=window.innerWidth*4/5+"px";
     }
 }
 send.addEventListener("mouseover", function(){
@@ -231,6 +231,7 @@ function recievebottxt(usertext)
     var reply = findreply(usertext);
     newEle.innerHTML = reply;
     newEle.className = "recieve";
+    newEle.style.maxWidth=window.innerWidth*4/5+"px";
     texts.appendChild(newEle);
     localStorage.setItem(n.toString()+'r',newEle.innerHTML);
 }
