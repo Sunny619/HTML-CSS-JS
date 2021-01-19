@@ -1,6 +1,3 @@
-var star = '*', x=0,n=0;
-var coin = ["Heads","Tails"];
-//var replies=["hi","hello", "how are you?", "I am fine", "How u doing?", "Lets have some fun", "nice", "You are cool!", "Awesome"];
 var replies = 
 [
     ["interests","I am interested in all kinds of things. We can talk about anything!"],
@@ -158,8 +155,9 @@ var replies =
     ["laugh", "hahaha"],
     ["😂", "haha"]
 ];
-if(localStorage.count!=null)
-    n = localStorage.count;
+//var replies=["hi","hello", "how are you?", "I am fine", "How u doing?", "Lets have some fun", "nice", "You are cool!", "Awesome"];
+var star = '*', x=0,n=0;
+var coin = ["Heads","Tails"];
 var text1 = document.getElementById("text1");
 var home = document.getElementById("home");
 var send = document.getElementById("button1");
@@ -168,9 +166,10 @@ var hello = document.getElementById("hello");
 var texts = document.getElementById("texts");
 var textbox = document.getElementById("textbox");
 var textwindow = document.getElementById("center2");
-
 //textwindow.style.height = window.innerHeight-200+"px";
 //texts.style.maxWidth=window.innerWidth*4/5+"px";
+if(localStorage.count!=null)
+    n = localStorage.count;
 text1.innerHTML =  "Touch Count = "+x;
 home.style.color = "gold";
 
@@ -281,7 +280,7 @@ function findreply(str)
         {
             return replies[i][1];
         }
-        else if(str.includes("coin flip") || str.includes("heads or tails") || str.includes("head or tail") || str.includes("flip coin") || str.includes("flip a coin"))
+        else if(str.includes("coin flip") || str.includes("heads or tails") || str.includes("head or tail") || str.includes("flip coin") || str.includes("flip a coin")|| str.includes("toss a coin") || str.includes("toss coin")|| str.includes("coin toss"))
         {
             return coin[Math.floor((Math.random() * coin.length) + 0)];
         }

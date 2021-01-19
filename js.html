@@ -67,6 +67,23 @@
             align-items: center;
             justify-content: flex-end; 
         }
+        .sendpanel
+        {
+            display: flex;
+            align-items: center;
+        }
+        #button1
+        {
+            
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        #button2
+        {
+            
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
     </style>
     <head>
         <meta charset="UTF-8">
@@ -90,10 +107,10 @@
         </div>
         <div id='center2' class="center2">
             <div id="texts"></div>
-            <div>
+            <div class="sendpanel">
                 <input id="textbox" type="text">
-                <button id="button1">Send</button>
-                <button id="button2">Clear</button>
+                <button id="button1"><img src="send.png" width="30px"></button>
+                <button id="button2"><img src="delete.png" width="30px"></button>
             </div>
             
             <script src="javascript.js"></script>
