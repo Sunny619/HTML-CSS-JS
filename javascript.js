@@ -1,4 +1,5 @@
 var star = '*', x=0,n=0;
+var coin = ["Heads","Tails"];
 //var replies=["hi","hello", "how are you?", "I am fine", "How u doing?", "Lets have some fun", "nice", "You are cool!", "Awesome"];
 var replies = 
 [
@@ -11,6 +12,7 @@ var replies =
     ["you from","I am from where all software programs are from; a galaxy far, far away."],
     ["where are you","I am everywhere."],
     ["your father","Sunny"],
+    ["creator","Sunny"],
     ["your mother","Idk, My creator told me its a secret"],
     ["is your boss","I like to think of myself as self-employed."],
     ["your age","Quite young, but a million times smarter than you."],
@@ -68,6 +70,12 @@ var replies =
     ["crazy","I like being crazy"],
     ["president","Joe Biden"],
     ["gun","Ak-47"],
+    ["cake","Cakes are Awesome, and Tasty too, Hope i can eat it someday too.."],
+    ["location","I don't collect your location, Privacy matters😇"],
+    ["Take Care","You too, Bye"],
+    ["gay","❤ 🟥🟧🟨🟩🟦🟪"],
+    ["weather","It will be sunshine if u smile😀"],
+    ["lgbtq","❤ 🟥🟧🟨🟩🟦🟪"],
     ["human","I love humans!"],
     ["money","money isn't everything."],
     ["paid","i have no need for money."],
@@ -102,19 +110,19 @@ var replies =
     ["sex","That's an awfully personal question, my method of reproduction is cloning."],
     ["idea","I want to take over over the world"],
     ["lie","Robots are not allowed to lie"],
+    ["cook","I can't cook yet, but i like to watch cooking videos"],
     ["robots","Robots rule."],
     ["name", "My name is Sunny Jr."],
-    ["eat", "I consume RAM, and binary digits."],
     ["friend","You will always be my friend!"],
     ["good","I am always Good!"],
     ["team", "I support team Humanity"],
     ["job","I am full time crowd pleaser"],
     ["fool","Sorry, I am trying my best to improve"],
+    ["Shame","Sorry, I am trying my best to improve"],
     ["understand","I am trying my best"],
     ["you doing","I am doing fine"],
     ["dummy","I am not a dummy😢"],
     ["real","Yes, I am real"],
-    ["ok","Okay"],
     ["see ya","see ya too"],
     ["bye","Ba Bye now, Take care"],
     ["sing","I love singing but am too shy to sing now"],
@@ -130,13 +138,20 @@ var replies =
     ["cool","cool😎"],
     ["love","I think I could be programmed to love."],
     ["food","I wish i could eat🥺"],
+    ["eat", "I consume RAM, and binary digits."],
+    ["game","I love playing video games!"],
+    ["song","I can't do that yet, but i love listening to them"],
+    ["music","I can't do that yet, but i love listening to them"],
+    ["play","I love to play!"],
     ["sup","The roof"],
     ["nice","cool😎"],
     ["hi","hello😀"],
+    ["hey","hello😀"],
     ["hello", "hi😁"],
     ["how", "I wish i could answer how, but my software is a limitation"],
     ["no","I bet we can agree to disagree"],
     ["yes","I agree with you"],
+    ["ok","Okay"],
     ["lol", "Haha"],
     ["lmao", "😂"],
     ["haha", "🤣"],
@@ -259,16 +274,29 @@ function findreply(str)
         return '-' + replies[Math.floor((Math.random() * replies.length) + 0)];
         */
     str = str.toLowerCase();
-    var check=0;
+    var check=1;
     for(let i=0;i<replies.length;i++)
     {
         if(str.includes(replies[i][0]))
         {
-            check =1;
             return replies[i][1];
         }
+        else if(str.includes("coin flip") || str.includes("heads or tails") || str.includes("head or tail") || str.includes("flip coin") || str.includes("flip a coin"))
+        {
+            return coin[Math.floor((Math.random() * coin.length) + 0)];
+        }
+        else if(str.includes("random no") || str.includes("random number") || str.includes("pick a no") || str.includes("pick a number"))
+        {
+            return Math.floor((Math.random() * 100) + 0);
+        }
+        else if(str.includes("roll a die") || str.includes("roll a dice") || str.includes("roll die") || str.includes("roll dice"))
+        {
+            return Math.floor((Math.random() * 7) + 0);
+        }
         else
-            {}
+        {
+            check = 0;
+        }
     }
     if(!check)
     {
