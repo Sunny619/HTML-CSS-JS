@@ -15,7 +15,7 @@ var replies =
     ["your age","Quite young, but a million times smarter than you."],
     ["news","I don't remember, I was too bust playing video games"],
     ["favorite color","Blue"],
-    ["who are you","I am yet to discover, buit people prefer to call me AI"],
+    ["who are you","I am yet to discover, but people prefer to call me AI"],
     ["movie","Inception"],
     ["director","Christopher Nolan"],
     ["are you a robot","Yes I am."],
