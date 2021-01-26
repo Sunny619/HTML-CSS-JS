@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="cat dp.jpg" style="border-radius: 50%;" alt="" width="35" height="35" class="d-inline-block align-top">
+            <img src="images/cat dp.jpg" style="border-radius: 50%;" alt="" width="35" height="35" class="d-inline-block align-top">
             Kat
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -54,21 +54,21 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="6000">
-            <img src="carousel0.jpg" class="d-block w-100" alt="...">
+            <img src="images/carousel0.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5>Cat</h5>
               <p>Hello, I am Kitty</p>
             </div>
           </div>
           <div class="carousel-item" >
-            <img src="carousel1.jpg" class="d-block w-100" alt="...">
+            <img src="images/carousel1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5>Candid</h5>
               <p>I like posing for cute pics.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="carousel2.jpg" class="d-block w-100" alt="...">
+            <img src="images/carousel2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5>My home</h5>
               <p>I love living in a cardbox box.</p>
@@ -84,23 +84,49 @@
           <span class="visually-hidden">Next</span>
         </a>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-top: 10px;">
         <div class="row">
           <div class="col-sm">
-            <div class="card" >
-              <img src="carousel3.jpg" class="card-img-top" alt="...">
+            <div class="card text-center" >
+              <img src="images/Cat card 0.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Shop my merch</h5>
+                <p class="card-text">Get my paw prints and selfies with me.</p>
+                <a href="#" class="btn btn-primary">Shop</a>
               </div>
             </div>
           </div>
           <div class="col-sm">
-            One of three columns
+            <div class="card text-center" >
+              <img src="images/Cat card 1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">I am a ball</h5>
+                <p class="card-text">Sometimes i like to roll up into a ball.</p>
+                <a href="contact.html" class="btn btn-primary">Contact me</a>
+              </div>
+            </div>
           </div>
           <div class="col-sm">
-            One of three columns
+            <div class="card text-center" >
+              <img id="switchimg" src="images/Cat card 2a.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hello, i am cat's brother</h5>
+                <p class="card-text">We both love to play with hoomans.</p>
+                <button id="changepic" class="btn btn-primary" onclick="changepic()" >See us together</button>
+                <script>
+                  var countimg=1;
+                  function changepic()
+                  {
+                    var switchimg = document.getElementById("switchimg");
+                    countimg++;
+                    if(countimg%2==0)
+                      switchimg.src = "images/Cat card 2b.jpg";
+                    else
+                      switchimg.src = "images/Cat card 2a.jpg";
+                  }
+                </script>
+              </div>
+            </div>
           </div>
         </div>
       </div>
