@@ -112,14 +112,14 @@
               <div class="card-body">
                 <h5 class="card-title">Hello, i am cat's brother</h5>
                 <p class="card-text">We both love to play with hoomans.</p>
-                <button id="changepic" class="btn btn-primary" onclick="changepic()" >See us together</button>
-                <script>
-                  var countimg=1;
+                <input type="checkbox" class="btn-check" id="btncheck1" onclick="changepic()" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck1">See us together</label>
+                <script>                 
                   function changepic()
                   {
+                    var checkbox = document.getElementById("btncheck1");
                     var switchimg = document.getElementById("switchimg");
-                    countimg++;
-                    if(countimg%2==0)
+                    if(checkbox.checked)
                       switchimg.src = "Images/Cat card 2b.jpg";
                     else
                       switchimg.src = "Images/Cat card 2a.jpg";
