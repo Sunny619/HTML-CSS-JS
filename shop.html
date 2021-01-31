@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+      @media (max-width: 768px) {
+        .col-md {
+        flex: 1 0 50%;
+      }
+      }
+    </style>
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body onresize="resizep()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -50,48 +57,104 @@
           </div>
         </div>
       </nav>
-      <div class="row row-cols-1 row-cols-md-auto g-4">
-        <div class="col-md h-100">
-          <div class="card text-center" >
+
+      <div id="shop" class="row row-cols-1 g-4">
+        <div class="col-md">
+          <div class="card text-center h-100" >
             <img src="Images/shop0.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Shop my merch</h5>
-              <p class="card-text">Get my paw prints and selfies with me.</p>
+              <h5 class="card-title">Selfies</h5>
+              <p class="card-text">Get a selfie with me 😺</p>
               <a href="shop.html" class="btn btn-primary">Shop</a>
             </div>
           </div>
         </div>
-        <div class="col-md h-100">
-          <div class="card text-center" >
-            <img src="Images/shop0.jpg" class="card-img-top" alt="...">
+        <div class="col-md">
+          <div class="card text-center h-100" >
+            <img src="Images/shop1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Shop my merch</h5>
-              <p class="card-text">Get my paw prints and selfies with me.</p>
+              <h5 class="card-title">My paw</h5>
+              <p class="card-text">Thats my way of signing an autograph😎</p>
               <a href="shop.html" class="btn btn-primary">Shop</a>
             </div>
           </div>
         </div>
-        <div class="col-md h-100">
-          <div class="card text-center" >
-            <img src="Images/shop0.jpg" class="card-img-top" alt="...">
+        <div class="col-md">
+          <div class="card text-center h-100" >
+            <img src="Images/shop2.jpg" class="card-img-top" alt="...">
+            <div class="carousel-caption" style="bottom: unset; top:20%">
+              <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Shop my merch</h5>
-              <p class="card-text">Get my paw prints and selfies with me.</p>
+              <h5 class="card-title">Coming soon</h5>
+              <p class="card-text">Coming soon</p>
               <a href="shop.html" class="btn btn-primary">Shop</a>
             </div>
           </div>
         </div>
-        <div class="col-md h-100">
-          <div class="card text-center" >
-            <img src="Images/shop0.jpg" class="card-img-top" alt="...">
+        <div class="col-md">
+          <div class="card text-center h-100" >
+            <img src="Images/shop2.jpg" class="card-img-top" alt="...">
+            <div class="carousel-caption" style="bottom: unset; top:20%">
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Shop my merch</h5>
-              <p class="card-text">Get my paw prints and selfies with me.</p>
+              <h5 class="card-title">Coming soon</h5>
+              <p class="card-text">Coming soon</p>
+              <a href="shop.html" class="btn btn-primary">Shop</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card text-center h-100" >
+            <img src="Images/shop2.jpg" class="card-img-top" alt="...">
+            <div class="carousel-caption" style="bottom: unset; top:20%">
+              <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Coming soon</h5>
+              <p class="card-text">Coming soon</p>
+              <a href="shop.html" class="btn btn-primary">Shop</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card text-center h-100" >
+            <img src="Images/shop2.jpg" class="card-img-top" alt="...">
+            <div class="carousel-caption" style="bottom: unset; top:20%">
+              <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Coming soon</h5>
+              <p class="card-text">Coming soon</p>
               <a href="shop.html" class="btn btn-primary">Shop</a>
             </div>
           </div>
         </div>
       </div>
+      <script>
+        var shopele = document.getElementById("shop");
+        function resizep()
+        {
+          if(window.innerWidth>2000)
+            shopele.className = "row row-cols-1 row-cols-md-6 g-4";
+          else if(window.innerWidth>1600)
+            shopele.className = "row row-cols-1 row-cols-md-5 g-4";
+          else if(window.innerWidth>1280)
+            shopele.className = "row row-cols-1 row-cols-md-4 g-4";
+          else if(window.innerWidth>800)
+            shopele.className = "row row-cols-1 row-cols-md-3 g-4";
+        }
+        resizep();
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>
