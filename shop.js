@@ -1,5 +1,5 @@
 var shopele = document.getElementById("shop");
-
+var cartmenu = document.getElementById("cart-menu");
 var noofitem = 7;
 var itemcount = [];
 for(var i =0; i<=noofitem;i++)
@@ -9,6 +9,7 @@ for(var i =0; i<=noofitem;i++)
     itemcount[i]=parseInt(localStorage.getItem("itemcount"+i.toString()));
     console.log(itemcount[i],i);
     document.getElementById("item-count-"+i).innerHTML=itemcount[i]; 
+    cartmenu.children[i-1].children[0].children[2].innerHTML = itemcount[i];
     showpanel(document.getElementById("item-count-"+i)) 
     //add.className = "visually-hidden";
     //add.parentElement.children[1].className = "";
@@ -35,19 +36,24 @@ resizep();
 
 function additem(add)
 {
-    //var itemno=add.id.charAt((add.id.length)-1);
-    //console.log(add.parentElement.children[1].children[0].children[2]);
+    var itemno=add.id.charAt((add.id.length)-1);
+    //console.log(add.parentElement.children[1].children[0].children[2]);0
+    cartmenu.children[itemno-1].className = "";
     add.className = "visually-hidden";
     add.parentElement.children[1].className = "";
     incrementcount(add.parentElement.children[1].children[0].children[2]);
 }
 function showpanel(panel)
 {
+  var itemno=panel.id.charAt((panel.id.length)-1);
+  cartmenu.children[itemno-1].className = "";
   panel.parentElement.parentElement.className = "";
   panel.parentElement.parentElement.parentElement.children[0].className = "visually-hidden";
 }
 function hidepanel(panel)
 {
+  var itemno=panel.id.charAt((panel.id.length)-1);
+  cartmenu.children[itemno-1].className = "visually-hidden";
   panel.parentElement.parentElement.className = "visually-hidden";
   panel.parentElement.parentElement.parentElement.children[0].className = "";
 }
@@ -57,6 +63,7 @@ function incrementcount(add) {
   itemcount[parseInt(itemno)]+=1;
   localStorage.setItem("itemcount"+itemno, itemcount[parseInt(itemno)])
   add.parentElement.children[1].innerHTML= itemcount[itemno];
+  cartmenu.children[itemno-1].children[0].children[2].innerHTML = itemcount[itemno];
 }
 function subtractcount(sub) {
   var itemno=sub.id.charAt((sub.id.length)-1);
@@ -64,6 +71,7 @@ function subtractcount(sub) {
   itemcount[parseInt(itemno)]-=1;
   localStorage.setItem("itemcount"+itemno, itemcount[parseInt(itemno)])
   sub.parentElement.children[1].innerHTML= itemcount[itemno];
+  cartmenu.children[itemno-1].children[0].children[2].innerHTML = itemcount[itemno];
   if(itemcount[itemno]==0)
   {
     hidepanel(sub);
