@@ -1,8 +1,8 @@
 var shopele = document.getElementById("shop");
 var cartmenu = document.getElementById("cart-menu");
-var noofitem = 7;
+var noofitem = 6;
 var itemcount = [];
-for(var i =0; i<=noofitem;i++)
+for(var i =1; i<=noofitem;i++)
 {
   if(localStorage.getItem("itemcount"+i.toString())!=null && localStorage.getItem("itemcount"+i.toString())!=0)
   {
